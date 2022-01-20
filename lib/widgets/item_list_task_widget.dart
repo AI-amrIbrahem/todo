@@ -4,7 +4,7 @@ import 'package:todo/models/task_model.dart';
 
 Widget getItemTaskList(List<TaskModel> list,int index, HomeCubit homeCubit){
   return Dismissible(
-    key: Key('${list[index].id}'),
+    key: UniqueKey(),
     onDismissed: (direction) {
       homeCubit.deletTask(list[index].id);
     },
